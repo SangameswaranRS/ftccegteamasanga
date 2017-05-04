@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:title="Home"
+            android:id="@+id/home"
+            android:checked="true"/>
+
+        <item
+            android:id="@+id/chatActivity"
+
+            android:title="Group Chat"
+            />
+        <item
+            android:id="@+id/viewPersonalNoteActivity"
+
+            android:title=" Upload Personal Notes" />
+        <item
+            android:title="View Personal Notes"
+            android:id="@+id/viewp"/>
+        <item
+            android:id="@+id/menu5"
+            android:title="View problem statement"/>
+        <item
+            android:id="@+id/recentbot"
+            android:title="Upload Recent Bot Updates"/>
+
+        <item
+            android:id="@+id/retreive"
+            android:title="Admin Login"/>
+
+    </group>
+
+
+
+</menu>

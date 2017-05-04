@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/myname"
+        android:textSize="30dp"
+        android:text="LOGIN ERROR"
+        android:textAlignment="center"
+        android:textColor="@color/Ooo"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  Send>  "
+
+
+            android:height="35dp"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_back"
+            android:id="@+id/sende"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Enter your message here"
+            android:textColor="@color/Ooo"
+            android:ems="10"
+            android:id="@+id/ideditTexet"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/sende" />
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/MessageRecyclerView">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

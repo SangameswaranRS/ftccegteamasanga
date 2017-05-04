@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="Logged in as"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="73dp"
+        android:id="@+id/textView6" />
+
+    <TextView
+        android:text="ID HERE"
+        android:textSize="25dp"
+        android:textAlignment="center"
+        android:textColor="@color/Ooo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="78dp"
+        android:id="@+id/logintextview"
+        android:layout_below="@+id/textView6"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:hint="Enter memo content"
+        android:ems="10"
+        android:id="@+id/mem"
+
+        android:layout_marginEnd="69dp"
+        android:layout_marginTop="51dp"
+        android:layout_below="@+id/logintextview"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="     Save     "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/continuebtn1"
+        android:textColor="@color/white"
+
+        android:height="40dp"
+        android:textSize="30dp"
+
+        android:background="@drawable/btn_back"
+        android:layout_marginTop="65dp"
+        android:layout_below="@+id/mem"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
