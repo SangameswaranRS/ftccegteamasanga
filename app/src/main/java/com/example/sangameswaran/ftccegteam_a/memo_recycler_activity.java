@@ -6,9 +6,11 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -23,10 +25,12 @@ import java.util.ArrayList;
  * Created by Sangameswaran on 06-03-2017.
  */
 
-public class memo_recycler_activity extends AppCompatActivity implements View.OnClickListener {
+public class memo_recycler_activity extends AppCompatActivity implements View.OnClickListener
+{
 
     RecyclerView recyclerView;
-    RecyclerView.Adapter adapter;
+    SearchView memosearch;
+    MessageRecyclerViewAdapter adapter;
     RecyclerView.LayoutManager manager;
     ArrayList<ModelClass> arrayList=new ArrayList<>();
 
@@ -36,9 +40,35 @@ public class memo_recycler_activity extends AppCompatActivity implements View.On
         setContentView(R.layout.memo_recycler_view);
         recyclerView=(RecyclerView)findViewById(R.id.memorecyclerview);
 
+        memosearch=(SearchView) findViewById(R.id.memosearch);
         manager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(manager);
         recyclerView.setHasFixedSize(true);
+
+        memosearch.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+                ArrayList<ModelClass> newlist=new ArrayList<>();
+                // ModelClass m=new ModelClass();
+                for(ModelClass m : arrayList)
+                {
+                    if (m.getMessage().contains(query))
+                    {
+                        newlist.add(m);
+                    }
+
+                }
+                adapter.fun(newlist);
+
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
 
         DatabaseReference ref;
         SharedPreferences sp1=getSharedPreferences("myLoginid",MODE_PRIVATE);
@@ -115,4 +145,31 @@ public class memo_recycler_activity extends AppCompatActivity implements View.On
     public void onClick(View v) {
 
     }
+
+    /*@Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+
+
+        ArrayList<ModelClass> newlist=new ArrayList<>();
+       // ModelClass m=new ModelClass();
+        for(ModelClass m : arrayList)
+        {
+            if (m.getMessage().contains(newText))
+            {
+                newlist.add(m);
+            }
+        }
+        adapter=new MessageRecyclerViewAdapter(newlist);
+        recyclerView.setLayoutManager(manager);
+        recyclerView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
+
+        return true;
+    }*/
 }
+

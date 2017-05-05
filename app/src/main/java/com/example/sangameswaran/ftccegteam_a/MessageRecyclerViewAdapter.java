@@ -60,5 +60,13 @@ public class MessageRecyclerViewAdapter extends RecyclerView.Adapter<MessageRecy
 
 
         }
+
+    }
+    public void fun(ArrayList<ModelClass> newList)
+    {
+        arrayList.clear();
+        arrayList.addAll(newList);
+        notifyDataSetChanged();
     }
 }
+
