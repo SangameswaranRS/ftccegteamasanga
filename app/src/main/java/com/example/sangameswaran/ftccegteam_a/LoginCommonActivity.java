@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -107,7 +108,10 @@ public class LoginCommonActivity extends AppCompatActivity implements View.OnCli
                         Intent intent=new Intent(this,MainActivity.class);
                         startActivity(intent);
                     } else {
-                        Toast.makeText(getApplicationContext(), "Authentication Error", Toast.LENGTH_LONG).show();
+                        Toast t= Toast.makeText(getApplicationContext(), "Authentication Error", Toast.LENGTH_LONG);
+                        t.setGravity(Gravity.CENTER_HORIZONTAL,0,0);
+                        t.show();
+
                         b1.setText("          Retry          ");
 
                     }
