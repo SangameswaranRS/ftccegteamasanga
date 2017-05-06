@@ -1,8 +1,10 @@
 package com.example.sangameswaran.ftccegteam_a;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -28,6 +30,7 @@ public class LoginCommonActivity extends AppCompatActivity implements View.OnCli
     EditText e1,e2;
     TextView b1;
 
+    ProgressDialog st;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,11 +76,8 @@ public class LoginCommonActivity extends AppCompatActivity implements View.OnCli
 
                         if (dataSnapshot.hasChildren()) {
                             String value = dataSnapshot.getValue(String.class);
-
                             int a = Integer.parseInt(value);
                             Log.d("TAAAAG", "HELLOOOOOOOOOO" + value);
-                            //  Toast.makeText(this,"val"+a,Toast.LENGTH_LONG).show();
-                            //write into shared preferences
                             SharedPreferences sp = getSharedPreferences("mycount" + s1, MODE_PRIVATE);
                             SharedPreferences.Editor editor = sp.edit();
                             editor.putInt("mymemoCount" + s1, a);
@@ -94,7 +94,6 @@ public class LoginCommonActivity extends AppCompatActivity implements View.OnCli
 
                     //passwords match ..authenticate and store them
                     if ((s1.equals("FTC01-DANISH") && s2.equals("danishahmed")) || (s1.equals("FTC02-SANGA") && s2.equals("sangakrish")) || (s1.equals("FTC03-ROHITH") && s2.equals("rohith")) || (s1.equals("FTC04-BALAJI") && s2.equals("balajiganesh")) || (s1.equals("FTC05-PERVEEN") && s2.equals("perveen")) || (s1.equals("FTC06-AKILA") && s2.equals("akila"))) {
-                        Toast.makeText(getApplicationContext(), "Authentication successful", Toast.LENGTH_LONG).show();
                         SharedPreferences sp = getSharedPreferences("myLoginid", MODE_PRIVATE);
                         SharedPreferences.Editor editor = sp.edit();
                         editor.putString("myID", s1);
@@ -103,10 +102,40 @@ public class LoginCommonActivity extends AppCompatActivity implements View.OnCli
                         SharedPreferences.Editor editor1 = sp1.edit();
                         editor1.putString("myPW", s2);
                         editor1.commit();
-                        //Toast.makeText(getApplicationContext(), "Data storage successful", Toast.LENGTH_LONG).show();
+                        st=new ProgressDialog(this);
+                        st.setMessage("Authenticating please wait");
+                        st.setCancelable(false);
+                        st.show();
+                        DatabaseReference flagCheck=FirebaseDatabase.getInstance().getReference("login_flag_"+s1);
+                        flagCheck.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                    st.dismiss();
+                                    String value = dataSnapshot.getValue(String.class);
+                                    int a=Integer.parseInt(value);
+                                    if(a==0)
+                                    {
+                                        Toast.makeText(getApplicationContext(),"Authorization Success",Toast.LENGTH_LONG).show();
 
-                        Intent intent=new Intent(this,MainActivity.class);
-                        startActivity(intent);
+                                        Intent intent=new Intent(LoginCommonActivity.this,MainActivity.class);
+                                        startActivity(intent);
+
+                                    }
+                                else
+                                    {
+                                        Toast.makeText(getApplicationContext(),"Login from Multiple devices is not allowed,Sorry",Toast.LENGTH_LONG).show();
+
+                                    }
+
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                                Toast.makeText(getApplicationContext(),"Error in connectivity",Toast.LENGTH_LONG).show();
+                            }
+                        });
+
                     } else {
                         Toast t= Toast.makeText(getApplicationContext(), "Authentication Error", Toast.LENGTH_LONG);
                         t.setGravity(Gravity.CENTER_HORIZONTAL,0,0);

@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity
     RecyclerView.Adapter adapter;
     RecyclerView.LayoutManager manager;
     ArrayList<IntroModelClass> setter=new ArrayList<>();
+    String b1;
 
     //ImageView im;
     ProgressDialog dialog;
@@ -64,12 +65,19 @@ public class MainActivity extends AppCompatActivity
         setter.add(modelClass);
         recyclerView=(RecyclerView)findViewById(R.id.introrecyclerview);
 
+
+
         manager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(manager);
         adapter=new IntroRecyclerViewAdapter(setter);
         recyclerView.setAdapter(adapter);
+
         recyclerView.setHasFixedSize(true);
 
+        SharedPreferences sp1=getSharedPreferences("myLoginid",MODE_PRIVATE);
+         b1=sp1.getString("myID","Login please");
+        DatabaseReference flagCheck=FirebaseDatabase.getInstance().getReference("login_flag_"+b1);
+        flagCheck.setValue("1");
 
 
 
@@ -129,6 +137,9 @@ public class MainActivity extends AppCompatActivity
             alertdialog.setPositiveButton("Yes,Exit", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
+                    DatabaseReference flagCheck=FirebaseDatabase.getInstance().getReference("login_flag_"+b1);
+                    flagCheck.setValue("0");
+
                     finishAffinity();
 
                 }
