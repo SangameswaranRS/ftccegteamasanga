@@ -22,11 +22,9 @@ public class MessageRecyclerViewAdapter extends RecyclerView.Adapter<MessageRecy
     }
     @Override
     public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.model_class_layout,parent,false);
         RecyclerViewHolder holder=new RecyclerViewHolder(view);
         return holder;
-
     }
 
     @Override
@@ -52,19 +50,15 @@ public class MessageRecyclerViewAdapter extends RecyclerView.Adapter<MessageRecy
             t1=(TextView) itemView.findViewById(R.id.tv1);
             t2=(TextView) itemView.findViewById(R.id.tv2);
         }
-
         @Override
         public void onClick(View v) {
-
-           // Toast.makeText(v.getContext(),"clicked "+getAdapterPosition(),Toast.LENGTH_LONG).show();
-
-
+            // Toast.makeText(v.getContext(),"clicked "+getAdapterPosition(),Toast.LENGTH_LONG).show();
         }
 
     }
     public void fun(ArrayList<ModelClass> newList)
     {
-        arrayList.clear();
+        arrayList=new ArrayList<>();
         arrayList.addAll(newList);
         notifyDataSetChanged();
     }

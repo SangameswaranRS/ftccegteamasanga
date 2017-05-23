@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "24.0.2"
+    buildToolsVersion '25.0.0'
     defaultConfig {
         applicationId "com.example.sangameswaran.ftccegteam_a"
         minSdkVersion 21
@@ -33,9 +33,9 @@ dependencies {
     compile 'com.google.firebase:firebase-auth:10.2.0'
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.wrapp.floatlabelededittext:library:0.0.6'
+
     testCompile 'junit:junit:4.12'
-    compile 'com.google.android.gms:play-services-maps:10.2.0'
-}
+ }
 
 
 

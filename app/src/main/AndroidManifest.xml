@@ -10,8 +10,9 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar"
+        >
 
-        android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -22,9 +23,8 @@
 
         <activity android:name=".writeMessageActivity"></activity>
         <activity android:name=".GroupChatActivity"></activity>
-        <activity android:name=".LoginCommonActivity">
-
-
+        <activity android:name=".LoginCommonActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -40,6 +40,8 @@
         <activity android:name=".memo_recycler_activity"></activity>
         <activity android:name=".WebView1"></activity>
         <activity android:name=".WebView2"></activity>
+        <activity android:name=".MechanismTrackerActivity"></activity>
+        <activity android:name=".ViewMechanismActivity"></activity>
 
 
         <service android:name=".FirebaseMessagingService">

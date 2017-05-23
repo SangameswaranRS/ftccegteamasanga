@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reporting time:"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp" />
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/flt1"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edit1"
+            android:hint="Enter the name of mechanism tried"
+            />
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/flt2"
+        android:layout_below="@+id/flt1"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edit2"
+            android:hint="purpose of mechanism?"/>
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/flt3"
+        android:layout_below="@+id/flt2"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="29dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edit3"
+            android:hint="Percentage of success"
+            />
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Failure reason"
+        android:id="@+id/textView8"
+        android:layout_below="@+id/flt3"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp" />
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/radiogroup2"
+        android:orientation="vertical"
+        android:layout_marginTop="31dp"
+        android:layout_below="@+id/textView8"
+        android:layout_alignParentStart="true">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="conceptual error"
+            android:id="@+id/conceptualerror"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/implementationError"
+            android:text="Implementation Error"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Error"
+            android:checked="true"
+            android:id="@+id/noerror"
+            />
+    </RadioGroup>
+        <com.wrapp.floatlabelededittext.FloatLabeledEditText
+            android:id="@+id/flt4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/radiogroup2">
+
+            <EditText
+                android:id="@+id/edit4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Your comments?"
+                android:inputType="textMultiLine" />
+
+        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+
+        <Button
+            android:id="@+id/submit_response"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/flt4"
+            android:text="Submit"
+            android:textColor="@color/colorAccent" />
+    </RelativeLayout>
+</ScrollView>
+</LinearLayout>

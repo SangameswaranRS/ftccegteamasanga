@@ -222,6 +222,16 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
 
         }
+        else if(id==R.id.mech_tracker)
+        {
+            Intent intent=new Intent(this,MechanismTrackerActivity.class);
+            startActivity(intent);
+        }
+        else if(id==R.id.viewprogress)
+        {
+            Intent intent=new Intent(this,ViewMechanismActivity.class);
+            startActivity(intent);
+        }
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

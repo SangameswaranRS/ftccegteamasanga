@@ -1,37 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <group android:checkableBehavior="single">
         <item
             android:title="Home"
             android:id="@+id/home"
+            android:icon="@drawable/home_icon"
             android:checked="true"/>
 
         <item
             android:id="@+id/chatActivity"
-
+            android:icon="@drawable/ic_action_name"
             android:title="Group Chat"
             />
         <item
             android:id="@+id/viewPersonalNoteActivity"
-
+            android:icon="@drawable/upload"
             android:title=" Upload Personal Notes" />
         <item
             android:title="View Personal Notes"
+            android:icon="@drawable/view_notes"
             android:id="@+id/viewp"/>
         <item
             android:id="@+id/menu5"
+            android:icon="@drawable/view_problem_statement"
             android:title="View problem statement"/>
         <item
             android:id="@+id/recentbot"
+            android:icon="@drawable/upload"
             android:title="Upload Recent Bot Updates"/>
 
         <item
             android:id="@+id/retreive"
+            android:icon="@drawable/admin_login_icon"
             android:title="Admin Login"/>
-
+        <item
+            android:id="@+id/mech_tracker"
+            android:title="Record progress"
+            android:icon="@drawable/track_mechanism"
+            />
+        <item
+            android:id="@+id/viewprogress"
+            android:icon="@drawable/view_progress_icon"
+            android:title="View progress"
+            />
     </group>
-
-
-
 </menu>

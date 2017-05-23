@@ -6,4 +6,7 @@
     <color name="bla">#60a844</color>
     <color name="Ooo">#000000</color>
     <color name="white">#ffffff</color>
+    <color name="red">#ff0101</color>
+    <color name="yellow">#ffd001</color>
+    <color name="blue">#0660f1</color>
 </resources>
