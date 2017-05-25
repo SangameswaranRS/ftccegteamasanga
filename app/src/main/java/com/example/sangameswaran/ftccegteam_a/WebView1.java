@@ -1,5 +1,6 @@
 package com.example.sangameswaran.ftccegteam_a;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -23,5 +24,10 @@ public class WebView1 extends AppCompatActivity {
         wb.loadUrl("https://www.youtube.com/watch?v=MCQ_pgSw_-8");
 
 
+    }
+    @Override
+    public void onBackPressed() {
+        Intent intent=new Intent(this,MainActivity.class);
+        startActivity(intent);
     }
 }

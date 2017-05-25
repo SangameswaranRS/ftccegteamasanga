@@ -2,6 +2,7 @@ package com.example.sangameswaran.ftccegteam_a;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.widget.RecyclerView;
@@ -47,18 +48,18 @@ public class MechanismTrackerRecyclerViewAdapter extends RecyclerView.Adapter<Me
         holder.t6.setText("RECORDED TIMESTAMP : "+entity.getReporting_time());
         if(entity.getPriority().equals("red"))
         {
-            //holder.linearLayout.setBackgroundColor(context.getColor(R.color.red));
+            holder.linearLayout.setBackgroundColor(Color.parseColor("#ff0101"));
         }
         else if(entity.getPriority().equals("yellow"))
         {
-           // holder.linearLayout.setBackgroundColor(context.getColor(R.color.yellow));
+           holder.linearLayout.setBackgroundColor(Color.parseColor("#ffd001"));
         }
         else if(entity.getPriority().equals("green"))
         {
-            //holder.linearLayout.setBackgroundColor(context.getColor(R.color.colorAccent));
+            holder.linearLayout.setBackgroundColor(Color.parseColor("#309229"));
         }
         else {
-            //holder.linearLayout.setBackgroundColor(context.getColor(R.color.blue));
+            holder.linearLayout.setBackgroundColor(Color.parseColor("#0660f1"));
         }
     }
 

@@ -1,6 +1,7 @@
 package com.example.sangameswaran.ftccegteam_a;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -201,5 +202,11 @@ public class GroupChatActivity extends AppCompatActivity implements View.OnClick
                 message.setText("");
             }
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent=new Intent(this,MainActivity.class);
+        startActivity(intent);
     }
 }

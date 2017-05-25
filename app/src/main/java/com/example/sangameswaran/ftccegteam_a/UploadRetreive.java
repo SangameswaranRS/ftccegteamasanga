@@ -161,6 +161,7 @@ public class UploadRetreive extends AppCompatActivity implements View.OnClickLis
                         }
                     });
         } else {
+            Toast.makeText(getBaseContext(),"Select file to upload",Toast.LENGTH_LONG).show();
             //display an error if no file is selected
         }
     }

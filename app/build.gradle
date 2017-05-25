@@ -33,6 +33,7 @@ dependencies {
     compile 'com.google.firebase:firebase-auth:10.2.0'
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.wrapp.floatlabelededittext:library:0.0.6'
+    compile 'com.jjoe64:graphview:4.2.1'
 
     testCompile 'junit:junit:4.12'
  }

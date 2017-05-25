@@ -1,5 +1,6 @@
 package com.example.sangameswaran.ftccegteam_a;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -129,5 +130,10 @@ public class write_memo_activity extends AppCompatActivity implements View.OnCli
 
         }
 
+    }
+    @Override
+    public void onBackPressed() {
+        Intent intent=new Intent(this,MainActivity.class);
+        startActivity(intent);
     }
 }

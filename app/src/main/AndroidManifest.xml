@@ -42,6 +42,8 @@
         <activity android:name=".WebView2"></activity>
         <activity android:name=".MechanismTrackerActivity"></activity>
         <activity android:name=".ViewMechanismActivity"></activity>
+        <activity android:name=".ViewProgressGraphActivity"></activity>
+        <activity android:name=".AdminEntry"></activity>
 
 
         <service android:name=".FirebaseMessagingService">

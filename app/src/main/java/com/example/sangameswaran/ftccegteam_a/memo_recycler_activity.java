@@ -1,5 +1,6 @@
 package com.example.sangameswaran.ftccegteam_a;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -171,5 +172,10 @@ public class memo_recycler_activity extends AppCompatActivity implements View.On
 
         return true;
     }*/
+    @Override
+    public void onBackPressed() {
+        Intent intent=new Intent(this,MainActivity.class);
+        startActivity(intent);
+    }
 }
 

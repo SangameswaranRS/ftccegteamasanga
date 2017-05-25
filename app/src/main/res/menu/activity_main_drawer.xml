@@ -43,5 +43,8 @@
             android:icon="@drawable/view_progress_icon"
             android:title="View progress"
             />
+        <item
+            android:title="View Progress graph"
+            android:id="@+id/viewprogressgraph"/>
     </group>
 </menu>

@@ -1,6 +1,7 @@
 package com.example.sangameswaran.ftccegteam_a;
 
 import android.app.Application;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by Sangameswaran on 23-05-2017.
@@ -47,6 +49,8 @@ public class ViewMechanismActivity extends AppCompatActivity {
                         adapter.notifyDataSetChanged();
                         recyclerView.setHasFixedSize(true);
                     }
+                    Collections.reverse(entities);
+                    adapter.notifyDataSetChanged();
                 }
                 else
                 {
@@ -60,10 +64,16 @@ public class ViewMechanismActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"Connectivity error",Toast.LENGTH_LONG).show();
             }
         });
+        Collections.reverse(entities);
         adapter = new MechanismTrackerRecyclerViewAdapter(entities,this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(manager);
         adapter.notifyDataSetChanged();
         recyclerView.setHasFixedSize(true);
+    }
+    @Override
+    public void onBackPressed() {
+        Intent intent=new Intent(this,MainActivity.class);
+        startActivity(intent);
     }
 }

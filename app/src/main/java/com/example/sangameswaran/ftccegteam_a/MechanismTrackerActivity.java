@@ -1,5 +1,6 @@
 package com.example.sangameswaran.ftccegteam_a;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
@@ -118,5 +119,10 @@ public class MechanismTrackerActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Enter a valid Percentage",Toast.LENGTH_LONG).show();
         }
       return  "priority_not_defined";
+    }
+    @Override
+    public void onBackPressed() {
+        Intent intent=new Intent(this,MainActivity.class);
+        startActivity(intent);
     }
 }
