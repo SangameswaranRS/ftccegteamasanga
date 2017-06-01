@@ -46,6 +46,9 @@ public class AdminEntry extends AppCompatActivity {
                 {
                     Calendar calendar1=Calendar.getInstance();
                     int date=calendar.get(Calendar.DATE);
+                    int month=calendar.get(Calendar.MONTH);
+                    if(month==Calendar.JUNE)
+                        date+=31;
                     try{
                         int mechProgress=Integer.parseInt(mechprogressString);
                          int overallProgress=Integer.parseInt(overallProgressString);

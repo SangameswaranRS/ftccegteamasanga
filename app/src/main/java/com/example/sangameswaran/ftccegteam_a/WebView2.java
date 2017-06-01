@@ -13,7 +13,6 @@ import android.webkit.WebView;
 
 public class WebView2 extends AppCompatActivity{
     WebView wb;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +20,7 @@ public class WebView2 extends AppCompatActivity{
         wb=(WebView) findViewById(R.id.wb2);
         wb.setWebChromeClient(new WebChromeClient());
         wb.getSettings().setJavaScriptEnabled(true);
-        wb.loadUrl("https://console.firebase.google.com/project/p2pnavview-3519c/database/data/");
+        wb.loadUrl("https://cegteama.azurewebsites.net");
     }
     @Override
     public void onBackPressed() {

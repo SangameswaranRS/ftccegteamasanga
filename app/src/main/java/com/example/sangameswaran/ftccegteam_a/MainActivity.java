@@ -106,14 +106,6 @@ public class MainActivity extends AppCompatActivity
 
             }
         });
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Go Team CEG!!", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -350,15 +342,14 @@ public class MainActivity extends AppCompatActivity
             Intent intent=new Intent(this,ViewMechanismActivity.class);
             startActivity(intent);
         }
-
-        else if(id==R.id.viewprogressgraph)
-        {
-            Intent intent=new Intent(this,ViewProgressGraphActivity.class);
-            startActivity(intent);
-        }
         else if (id==R.id.retreive)
         {
             Intent intent=new Intent(this,AdminEntry.class);
+            startActivity(intent);
+        }
+        else if(id==R.id.viewOurWebsite)
+        {
+            Intent intent=new Intent(this,WebView2.class);
             startActivity(intent);
         }
 

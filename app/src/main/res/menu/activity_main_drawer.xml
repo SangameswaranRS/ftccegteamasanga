@@ -32,7 +32,7 @@
         <item
             android:id="@+id/retreive"
             android:icon="@drawable/admin_login_icon"
-            android:title="Admin Login"/>
+            android:title="Day progress tracker"/>
         <item
             android:id="@+id/mech_tracker"
             android:title="Record progress"
@@ -43,8 +43,9 @@
             android:icon="@drawable/view_progress_icon"
             android:title="View progress"
             />
-        <item
-            android:title="View Progress graph"
-            android:id="@+id/viewprogressgraph"/>
+       <item
+           android:id="@+id/viewOurWebsite"
+           android:title="View our website"
+           android:icon="@drawable/ic_menu_slideshow"/>
     </group>
 </menu>
