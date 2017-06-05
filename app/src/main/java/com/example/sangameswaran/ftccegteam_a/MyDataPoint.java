@@ -21,6 +21,10 @@ public class MyDataPoint {
         this.current_date = current_date;
     }
 
+    public String getDate_progress() {
+        return date_progress;
+    }
+
     public void setDate_progress(String date_progress) {
         this.date_progress = date_progress;
     }

@@ -17,8 +17,8 @@ public class FirebaseInstanceIDService extends FirebaseInstanceIdService {
     public void onTokenRefresh() {
 
         String token= FirebaseInstanceId.getInstance().getToken();
-        Toast.makeText(getApplicationContext(),"Token generated",Toast.LENGTH_LONG).show();
-        DatabaseReference myref= FirebaseDatabase.getInstance().getReference();
-        myref.child("TokenRegister").push().setValue(""+token);
+//        Toast.makeText(getApplicationContext(),"Token generated",Toast.LENGTH_LONG).show();
+        //DatabaseReference myref= FirebaseDatabase.getInstance().getReference();
+        //myref.child("TokenRegister").push().setValue(""+token);
     }
 }
